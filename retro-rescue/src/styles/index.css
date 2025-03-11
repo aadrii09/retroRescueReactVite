@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import"ness.css/css/ness.min.css";
+body{
+    background-color: #212529;
+    color: #fff;
+    font-family: "Press Start 2P", cursive;
+}
