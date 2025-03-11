@@ -19,6 +19,15 @@ const Login = () => {
     }
  }
 
+ const handleLoginGoogle = async () => {
+  try {
+    await loginGoogle();
+    navigate('/');
+  } catch (error) {
+    setError(error.message);
+  }
+ }
+
   return (
     <div className='flex flex-col items-center mt-10'>
         <h2 className='text-2xl font-bold mb-4'>Iniciar Sesion</h2>
@@ -48,7 +57,7 @@ className='bg-blue-500 text-white p-2 rounded-md m-2'
   Iniciar Sesion
 </button>
 <button className='bg-red-500 text-white p-2 rounded-md m-2'
-  onClick={loginGoogle}
+  onClick={handleLoginGoogle}
 >
         Iniciar Sesion
 </button>
