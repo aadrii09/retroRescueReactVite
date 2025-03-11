@@ -1,8 +1,9 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-@import"ness.css/css/ness.min.css";
+
+@import "../../node_modules/nes.css/css/nes.min.css";
 body{
     background-color: #212529;
     color: #fff;
