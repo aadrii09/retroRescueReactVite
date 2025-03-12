@@ -7,7 +7,7 @@ const Products = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try { 
+      try {
         const data = await getProducts()
         setProducts(data)
       } catch (error) {
@@ -16,11 +16,10 @@ const Products = () => {
     }
     fetchData();
   }, [])
-
   return (
     <div className='nes-container with-title m-5'>
       <h2 className='title'>Catálogo de Consolas Retro</h2>
-      <div className='nes-container is-dark flex flex-wrap gap-4'>
+      <div className='nest-container is-dark flex flex-wrap gap-4'>
         {products.length > 0 ? products.map(product => (
           <div key={product.id} className='nes-container is-rounded is-dark'>
             <p>{product.name}</p>

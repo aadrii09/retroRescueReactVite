@@ -3,7 +3,7 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDP_G4028Ct7n73VkvPdes3L9Fl8QkqQeg",
+    apiKey: import.meta.env.VITE_API_KEY,
     authDomain: "retro-rescue.firebaseapp.com",
     projectId: "retro-rescue",
     storageBucket: "retro-rescue.firebasestorage.app",

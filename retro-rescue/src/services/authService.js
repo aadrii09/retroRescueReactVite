@@ -1,18 +1,19 @@
 import {auth} from './firebaseConfig';
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 
-//registrar usuario
-export const registerUser = async(email, password)=>{
+// register user
+export const registerUser = async (email, password) => {
     try {
-       const userCredential = createUserWithEmailAndPassword(auth, email, password);
-       return userCredential; 
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        return userCredential.user;
     } catch (error) {
-        throw new Error(error.menssage);
+        console.error(error.message);
+        throw new Error(error.message);
     }
 }
 
-// Login user
+// login user
 export const loginUser = async (email, password) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -23,7 +24,7 @@ export const loginUser = async (email, password) => {
     }
 }
 
-// Login google
+// login google
 export const loginGoogle = async () => {
     try {
         const provider = new GoogleAuthProvider();
@@ -35,12 +36,12 @@ export const loginGoogle = async () => {
     }
 }
 
-//logout
-export const logout = async ()=>{
+// logout
+export const logout = async () => {
     try {
         await signOut(auth);
     } catch (error) {
-        console-error(error.menssage);
-        throw new Error(error.menssage);
+        console.error(error.message);
+        throw new Error(error.message);
     }
 }
