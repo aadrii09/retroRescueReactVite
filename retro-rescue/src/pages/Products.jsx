@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productService";
 import { Link } from "react-router-dom";
+import {useCart} from '../context/CartContext'
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -8,6 +9,8 @@ const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedPrice, setSelectedPrice] = useState("all");
+  const { addToCart } = useCart();
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +47,11 @@ const Products = () => {
 
     setFilteredProducts(filtered);
   }, [searchTerm, selectedCategory, selectedPrice, products]);
+
+  const handleBuy = (product) => {
+      addToCart(product);
+      alert(`${product.name} ha si agregado al carrito`);
+  }
 
   return (
     <div className="nes-container with-title m-5" >
@@ -106,7 +114,7 @@ const Products = () => {
                 <Link to={`/product/${product.id}`} className="nes-btn is-primary">
                   Ver detalles
                 </Link>
-                <button className="nes-btn is-success">Comprar</button>
+                <button  className="nes-btn is-success" onClick={() => handleBuy(product)}>Comprar</button>
               </div>
             </div>
           ))
