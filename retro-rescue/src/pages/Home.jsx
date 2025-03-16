@@ -9,6 +9,7 @@ import { doc, getDoc } from "firebase/firestore";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -46,7 +47,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="nes-container with-title m-5">
+    <div className="flex flex-col nes-container with-title m-5 justify-center min-h-screen">
       {/* Bienvenida personalizada */}
       {user ? (
         <div className="nes-container is-primary with-title p-4 text-center">
@@ -73,6 +74,7 @@ const Home = () => {
 
       {/* Carrusel de productos destacados */}
       {products.length > 0 ? (
+        <div className="w-130 max-w-3xl mx-auto mt-5">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={50}
@@ -80,11 +82,11 @@ const Home = () => {
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000 }}
-          className="mt-5"
+          className="w-full"
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
-              <div className="nes-container is-dark with-title p-5 text-center">
+              <div className="nes-container is-dark with-title p-5 text-center w-full max-w-lg">
                 <h2 className="title">{product.name}</h2>
                 <img
                   src={product.image}
@@ -100,6 +102,7 @@ const Home = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
       ) : (
         <p className="nes-text is-error">Cargando productos...</p>
       )}

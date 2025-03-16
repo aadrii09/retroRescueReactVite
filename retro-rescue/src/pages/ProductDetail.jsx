@@ -41,7 +41,7 @@ const ProductDetail = () => {
 
   return product ? (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="nes-container is-dark with-title p-6 flex flex-col md:flex-row items-center md:items-start gap-6 max-w-4xl">
+      <div className="nes-container is-dark with-title p-6 flex flex-col items-center max-w-xl w-full">
         <img
           className="nes-avatar is-large transition-transform transform hover:scale-105"
           src={product.image}

@@ -10,9 +10,15 @@ body {
 
 .title {
     margin-bottom: 20px;
-    color: #393939
+    color: #ddd
 }
 
 footer {
     text-align: center;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
 }
