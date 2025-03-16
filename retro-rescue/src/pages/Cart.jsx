@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <div className="nes-container with-title m-5">
-      <h2 className="title text-center">🛒 Carrito de Compras</h2>
+      <h2 className="title text-center " style={{ color: "black" }}>🛒 Carrito de Compras</h2>
 
       {cart.length > 0 ? (
         <>
@@ -61,6 +61,7 @@ const Cart = () => {
                       ➖
                     </button>
                     <input
+                    style={{ color: "white" }}
                       type="number"
                       min="1"
                       max={item.stock}

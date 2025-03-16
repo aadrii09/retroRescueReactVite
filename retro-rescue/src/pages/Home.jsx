@@ -51,7 +51,7 @@ const Home = () => {
       {/* Bienvenida personalizada */}
       {user ? (
         <div className="nes-container is-primary with-title p-4 text-center">
-          <h2 className="title">🎮 ¡Bienvenido, {username || "Gamer"}! 🎮</h2>
+          <h2 className="title" style={{ color: "black" }}>🎮 ¡Bienvenido, {username || "Gamer"}! 🎮</h2>
           <p>Nos alegra verte en nuestra tienda retro.</p>
           {user.metadata?.creationTime && (
             <p className="nes-text is-success">

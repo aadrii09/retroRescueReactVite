@@ -70,6 +70,7 @@ const Register = () => {
         <form onSubmit={handleRegister} className="flex flex-col gap-4">
           <label className="nes-text">Usuario</label>
           <input
+          style={{ backgroundColor:"white" }}
             type="text"
             name="username"
             className="nes-input text-black"
@@ -80,7 +81,7 @@ const Register = () => {
           />
 
           <label className="nes-text">Nombre</label>
-          <input
+          <input style={{ backgroundColor:"white" }}
             type="text"
             name="firstName"
             className="nes-input text-black"
@@ -91,7 +92,7 @@ const Register = () => {
           />
 
           <label className="nes-text">Apellidos</label>
-          <input
+          <input style={{ backgroundColor:"white" }}
             type="text"
             name="lastName"
             className="nes-input text-black"
@@ -102,7 +103,7 @@ const Register = () => {
           />
 
           <label className="nes-text">Correo electrónico</label>
-          <input
+          <input style={{ backgroundColor:"white" }}
             type="email"
             name="email"
             className="nes-input text-black"
@@ -113,7 +114,7 @@ const Register = () => {
           />
 
           <label className="nes-text">Fecha de Nacimiento</label>
-          <input
+          <input style={{ backgroundColor:"white" }}
             type="date"
             name="birthDate"
             className="nes-input text-black"
@@ -123,7 +124,7 @@ const Register = () => {
           />
 
           <label className="nes-text">Contraseña</label>
-          <input
+          <input style={{ backgroundColor:"white" }}
             type="password"
             name="password"
             className="nes-input text-black"

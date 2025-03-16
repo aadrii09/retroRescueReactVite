@@ -36,9 +36,9 @@ const Footer = () => {
         {/* contact */}
         <div>
           <h4>📞 Contacto</h4>
-          <p className="text-gray-300">✉️ Email: <a href="emailto:ferxas321@protonmail.com">ferxas321@protonmail.com</a></p>
+          <p className="text-gray-300">✉️ Email: <a href="adriancastrobeiro@gmail.com">adriancastrobeiro@gmail.com</a></p>
           <p className="text-gray-300">☎️ Tel: +1234567989</p>
-          <p className="text-gray-300">🏠 Ubicación: Grove street 123 st. Barcelona, SPain</p>
+          <p className="text-gray-300">🏠 Ubicación: A Coruña, Galicia, Spain</p>
         </div>
       </div>
     </footer>

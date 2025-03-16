@@ -46,13 +46,13 @@ const Products = () => {
   }, [searchTerm, selectedCategory, selectedPrice, products]);
 
   return (
-    <div className="nes-container with-title m-5">
-      <h2 className="title text-center">Catálogo de Consolas Retro</h2>
+    <div className="nes-container with-title m-5" >
+      <h2 className="title text-center" style={{ color: "black" }}>Catálogo de Consolas Retro</h2>
       <p className="nes-text is-primary text-center">Revive la nostalgia con nuestras consolas clásicas.</p>
 
       {/* Barra de búsqueda */}
       <div className="flex flex-wrap justify-center gap-4 mt-5">
-        <input
+        <input style={{ backgroundColor:"white" }}
           type="text"
           placeholder="Buscar por nombre..."
           className="nes-input"
@@ -61,7 +61,7 @@ const Products = () => {
         />
 
         {/* Filtro por categoría */}
-        <select className="nes-select" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+        <select className="nes-select" style={{ backgroundColor:"white" }} value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
           <option value="all">Todas las categorías</option>
           <option value="nintendo">Nintendo</option>
           <option value="sega">Sega</option>
@@ -70,7 +70,7 @@ const Products = () => {
         </select>
 
         {/* Filtro por precio */}
-        <select className="nes-select" value={selectedPrice} onChange={(e) => setSelectedPrice(e.target.value)}>
+        <select className="nes-select" style={{ backgroundColor:"white" }} value={selectedPrice} onChange={(e) => setSelectedPrice(e.target.value)}>
           <option value="all">Todos los precios</option>
           <option value="low">Menos de $100</option>
           <option value="mid">$100 - $300</option>

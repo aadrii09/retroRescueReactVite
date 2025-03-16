@@ -52,7 +52,7 @@ const Login = () => {
           <label className="nes-text">Correo electrónico</label>
           <input
             type="email"
-            className="nes-input text-black"
+            className="nes-input text-white"
             placeholder="Ingresa tu correo"
             required
             value={email}
@@ -64,7 +64,7 @@ const Login = () => {
           <div className="relative flex items-center">
             <input
               type={showPassword ? "text" : "password"}
-              className="nes-input w-full text-black"
+              className="nes-input w-full text-white"
               placeholder="Ingresa tu contraseña"
               required
               value={password}
