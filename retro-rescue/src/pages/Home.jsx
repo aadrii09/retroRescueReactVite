@@ -74,35 +74,77 @@ const Home = () => {
 
       {/* Carrusel de productos destacados */}
       {products.length > 0 ? (
-        <div className="w-130 max-w-3xl mx-auto mt-5">
+        <div className="w-full mx-auto mt-5">
+        <h3 className="text-center mb-4 nes-text is-primary text-xl">Productos Destacados</h3>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={50}
+          spaceBetween={30}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000 }}
-          className="w-full"
+          loop={true} 
+          breakpoints={{
+            
+            375: {
+              slidesPerView: 1,
+              spaceBetween: 10
+            },
+           
+            768: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+           
+            1024: {
+              slidesPerView: 1,
+              spaceBetween: 30
+            },
+           
+            1280: {
+              slidesPerView: 1,
+              spaceBetween: 40
+            },
+          
+            1440: {
+              slidesPerView: 1,
+              spaceBetween: 50
+            }
+          }}
+          className="w-full max-w-4xl mx-auto" grandes
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
-              <div className="nes-container is-dark with-title p-5 text-center w-full max-w-lg">
-                <h2 className="title">{product.name}</h2>
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="nes-avatar is-large mx-auto"
-                />
-                <p>{product.description}</p>
-                <p className="nes-text is-success">${product.price}</p>
-                <Link to={`/product/${product.id}`} className="nes-btn is-primary">
-                  Ver Detalles
-                </Link>
+              <div className="nes-container is-dark with-title p-3 md:p-6 lg:p-8 text-center">
+                <h2 className="title text-base sm:text-lg md:text-xl lg:text-2xl">{product.name}</h2>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-around gap-4 my-4">
+                  <div className="flex justify-center md:w-1/3">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain mx-auto"
+                    />
+                  </div>
+                  <div className="md:w-2/3 md:text-left">
+                    <div className="min-h-[80px] max-h-32 md:max-h-40 overflow-y-auto mb-4 px-2">
+                      <p className="text-sm sm:text-base md:text-lg">{product.description}</p>
+                    </div>
+                    <p className="nes-text is-success text-lg sm:text-xl md:text-2xl font-bold mt-2">
+                      ${product.price}
+                    </p>
+                    <Link 
+                      to={`/product/${product.id}`} 
+                      className="nes-btn is-primary text-sm sm:text-base md:text-lg mt-4 px-4 py-2"
+                    >
+                      Ver Detalles
+                    </Link>
+                  </div>
+                </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        </div>
+      </div>
       ) : (
         <p className="nes-text is-error">Cargando productos...</p>
       )}
